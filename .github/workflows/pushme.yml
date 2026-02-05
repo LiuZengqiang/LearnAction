@@ -1,4 +1,4 @@
-name: PushMe Notification
+name: HereComesTheGoodNews
 
 on:
   schedule:
