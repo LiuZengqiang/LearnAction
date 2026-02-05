@@ -126,12 +126,16 @@ def setup_driver(headless: bool = True) -> webdriver.Chrome:
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
-
+    options.page_load_strategy = 'eager'
     # 模拟真实浏览器
     options.add_argument(
         'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
 
     driver = webdriver.Chrome(options=options)
+    # --- 新增：设置页面加载超时为 180 秒 ---
+    driver.set_page_load_timeout(180) 
+    # --- 新增：设置脚本超时 ---
+    driver.set_script_timeout(180)
     return driver
 
 
@@ -391,7 +395,6 @@ def main():
     driver = setup_driver(headless=True)
 
     try:
-        driver = setup_driver()
         print(f"[{datetime.now()}] WebDriver 已初始化")
 
         # 访问目标页面
