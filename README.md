@@ -62,12 +62,10 @@ Settings → Actions → General
 
 ### 3️⃣ 安装 PushMe 并获取 Push Key
 
-* 下载并安装 **PushMe**
-* 获取你的 **Push Key**
+1. 下载并安装 **PushMe**： [https://github.com/yafoo/pushme](https://github.com/yafoo/pushme)  
+2. 在手机端获取你的 **Push Key**。
 
-该 Key 用于向手机发送通知。
-
----
+> 该 Key 将用于将盲审结果推送到你的手机。
 
 ### 4️⃣ 配置 GitHub Actions Secrets
 
@@ -81,7 +79,7 @@ Settings → Secrets and variables → Actions
 
 | Secret 名称        | 说明             |
 | ---------------- | -------------- |
-| `PUSH_KEY`       | PushMe 的推送 Key |
+| `PUSH_KEY`       | PushMe 的push_key |
 | `ZJUAM_ACCOUNT`  | 浙大统一身份认证账号     |
 | `ZJUAM_PASSWORD` | 浙大统一身份认证密码     |
 
